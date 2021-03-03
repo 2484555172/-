@@ -1,53 +1,77 @@
-#define _CRT_SECURE_NO_WARNINGS 
+#define _CRT_SECURE_NO_WARNINGS 1
 
-#include "test.h"
-
-
-//—°‘Ò≈≈–Ú
-
-//#define N 5
-//int main(void)
-//{
-//	int arr[N] = {5,2,4,1,3};
-//	Sort_1(arr, N);
-//	Print(arr, N);
-//	return 0;
-//}
-
-//√∞≈›≈≈–Ú
-//
-//#define N  9
-//int main(void)
-//{
-//	int arr[N] = { 9,6,1,3,5,2,4,8,7 };
-//	Sort_2(arr, N);
-//	Print(arr, N);
-//	return 0;
-//}
-
-//≤Â»Î≈≈–Ú
-
-//#define N 5
-//int main(void)
-//{
-//	int arr[N] = { 9,6,1,3,5 };
-//	Sort_3(arr, N);
-//	Print(arr, N);
-//	return 0;
-//}
-
-//œ£∂˚≈≈–Ú
-
-//#define N 15
-//int main(void)
-//{
-//	int arr[N] = { 9,6,11,3,5,12,8,7,10,15,14,4,1,13,2 };
-//	Sort_4(arr, N);
-//	Print(arr, N);
-//	return 0;
-//}
-
-//πÈ≤¢≈≈–Ú(-)
+#include"work.h"
 
 
+void Input(int a[M][S])
+{
+	for (int i = 0; i < M; i++)
+	{
+		for (int j = 0; j < S; j++)
+		{
+			scanf("%d", &a[i][j]);
+		}
+	}
+	printf("\n");
+}
+
+void Input_s(int b[S][N])
+{
+	for (int i = 0; i < S; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			scanf("%d", &b[i][j]);
+		}
+	}
+	printf("\n");
+}
+
+void Print(int a[M][S])
+{
+	for (int i = 0; i < M; i++)
+	{
+		for (int j = 0; j < S; j++)
+		{
+			printf("%d ", a[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+
+void Printf(int temp[M][N])
+{
+	for (int i = 0; i < M; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			printf("%d ", temp[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+void Print_s(int b[S][N])
+{
+	for (int i = 0; i < S; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			printf("%d ", b[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+
+int Add_Jz(int a[M][S], int b[S][N], int i, int j)
+{
+	int sum = 0;
+	for (int y = 0; y < S; y++)
+	{
+		sum += a[i][y] * b[y][j];
+	}
+	return sum;
+}
 
