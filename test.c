@@ -1,204 +1,143 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <string.h>
+#include <math.h>
 
-#define M 3
-#define N 3
-int main(void)
-{	
-	int arr[M][N] = { 0 };
-	int temp[M][N] = { 0 };
-	for (int i = 0; i < M; i++)
-	{
-		for (int j = 0; j < N; j++)
-		{
-			scanf("%d", &arr[i][j]);
-		}
-	}
-	for (int i = 0; i < M; i++)
-	{
-		for (int j = 0; j < N; j++)
-		{
-			temp[i][j] = arr[j][i];
-		}
-	}
-	for (int i = 0; i < M; i++)
-	{
-		for (int j = 0; j < N; j++)
-		{
-			printf("	%d", temp[i][j]);
-		}
-	 printf("\n");
-	}
-		return 0;
-}
-
-
+/*输入10个学生的成绩（0-100），计算平均分（保留一位小数）
+并统计不及格（成绩低于60分）的学生人数*/
+//#define N 10
 //int main(void)
 //{
-//	for (int i = 0; i < 5; i++)
+//	int arr[N + 1] = { 0 };
+//	int count = 0;
+//	double ave = 0;
+//	double sum = 0;
+//	for (int i = 0; i < N; i++)
 //	{
-//		for (int j = 0; j < i + 1; j++)
+//		scanf("%d", &arr[i]);
+//	}
+//	for (int i = 0; i < N; i++) 
+//	{
+//		if (arr[i] < 60)
 //		{
-//			printf(" ");
+//			count++;
 //		}
-//		for (int j = 0; j < 5; j++)
-//		{
-//			printf("* ");
-//		}
-//		printf("\n");
+//		sum += arr[i];
 //	}
-//	return 0;
-//}
-
-//void menu()
-//{
-//	printf("***********************************\n");
-//	printf("***      1.play 0.exit        *****\n");
-//	printf("***********************************\n");
-//}
-
-//void Rand()
-//{
-//	int i = rand()%6;
-//	printf("\n抽中:");
-//	if (i == 0)
-//	{
-//		printf("二爷\n");
-//	}
-//	if (i == 1)
-//	{
-//		printf("小爷\n");
-//	}
-//	if (i == 2)
-//	{
-//		printf("石少\n");
-//	}
-//	if (i == 3)
-//	{
-//		printf("胡sir\n");
-//	}
-//	if (i == 4)
-//	{
-//		printf("梁少\n");
-//	}
-//	if (i == 5)
-//	{
-//		printf("太君\n");
-//	}
-//}
-
-
-//void Test()
-//{
-//	int input = 0;
-//	char arr[100];
-//	do
-//	{
-//		menu();
-//		printf("请输入:>");
-//		scanf("%d", &input);
-//		switch (input)
-//		{
-//		case 1:
-//			Rand();
-//			break;
-//		case 0:
-//			printf("退出抽奖");
-//			break;
-//		default:
-//			printf("输入错误,请重新输入!!!\n");
-//			break;
-//		}
-//		
-//	} while (input);
-//}
-
-//int main(void)
-//{
-//	srand((unsigned)time(NULL));
-//	Test();
+//	ave = sum / 10.0;
+//	printf("%0.1lf ", ave);
+//	printf("%d", count);
 //	return 0;
 //}
 
 
+//输入10个数，找出其中绝对值最小的数，将它和最后一个数交换，然后输出这10个数
 
-
-
-
-//#define m 100
-//int main(void)
-//{
-//	char ch;
-//	scanf("%c", &ch);
-//	for (int i = 0; i < m; i++)
-//	{
-//		for (int j = 0; j < m - i; j++)
-//		{
-//			printf(" ");
-//		}
-//		ch += 1;
-//		for (int j = 0; j <2*i+1; j++)
-//		{
-//			if (j == 0 || j == 2 * i)
-//			{
-//				printf("%c", ch);
-//			}
-//			else
-//			{
-//				printf(" ");
-//			}
-//		}
-//		printf("\n");
-//	}
+//#define N 10
 //
-//	for (int i = 0; i < m-1; i++)
+//void Swap(int arr[N],int minpos,int n)
+//{
+//	int k = 0;
+//	k = arr[n];
+//	arr[n] = arr[minpos];
+//	arr[minpos] = k;
+//
+//}
+//
+//int main(void)
+//{
+//	int arr[N + 1] = { 0 };
+//	int t = 0;
+//	int minpos = 0;
+//	for (int i = 0; i < N; i++)
 //	{
-//		for (int j = 0; j <= 1 + i; j++)
+//		scanf("%d", &arr[i]);
+//	}
+//	for (int i = 1; i < N; i++)
+//	{
+//		if (fabs(arr[minpos]) > fabs(arr[i]))
+//		{
+//			t = minpos;
+//			minpos = i;
+//			i = t;
+//		}
+//	}
+//	//printf("%d", minpos);
+//	Swap(arr,minpos,N-1);
+//	for (int i = 0; i < N; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+ 
+
+
+//int main(void)
+//{
+//	double  x;
+//	double y = 0;
+//	scanf("%lf", &x);
+//	if (x < 1)
+//	{
+//		printf("%0.2lf", x);
+//	}
+//	if (x >= 1 && x < 10)
+//	{
+//		y = 2 * x - 1;
+//		printf("%0.2lf", y);
+//	}
+//	if (x >= 10)
+//	{
+//		y = 3 * x - 11;
+//		printf("%0.2lf", y);
+//	}
+//	return 0;
+//}
+
+
+//编程,输入一个１０进制正整数,然后输出它所对应的八进制数
+
+//int main(void)
+//{
+//	int n;
+//	scanf("%d", &n);
+//	printf("%o", n);
+//	return 0;
+//}
+
+//#define N 10
+
+//int main(void)
+//{
+//	char ch = '*';
+//	int i, j;
+//	for (i = 0; i < N; i++)
+//	{
+//		for (j = 0; j < N - i; j++)
 //		{
 //			printf(" ");
 //		}
-//		ch -= 1;
-//		for (int j = 0; j <2*m-3-2*i; j++)
+//		for (j = 0; j < 2 * i + 1; j++)
 //		{
-//			if (j == 0||j==2*m-4-2*i )
-//			{
-//				printf("%c", ch);
-//			}
-//			else
-//			{
-//				printf(" ");
-//			}
+//			printf("%c", ch);
+//		//	printf("二爷牛逼");
 //		}
 //		printf("\n");
 //	}
-//	return 0;
-//}
-
-
-//#define m 10
-//int main(void)
-//{
-//	int a = 1;
-//	for (int i = 0; i < m; i++)
+//	for (i = 0; i < N-1; i++)
 //	{
-//		a = i+1;
-//		for (int j = 0; j < m-i; j++)
+//		for (j = 0; j <=i+1; j++)
 //		{
-//			printf("%d ", a);
-//			a += 1;
+//			printf(" ");
 //		}
-//		a = 1;
-//		for (int j = 0; j < i ; j++)
+//		for (j = 0; j < 2*N-3-2*i; j++)
 //		{
-//			printf("%d ", a);
-//			a += 1;
+//			printf("%c", ch);
+//		//	printf("二爷牛逼");
 //		}
 //		printf("\n");
 //	}
-//
-//	return 0;
 //}
+
+
