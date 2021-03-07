@@ -1,143 +1,167 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
-#include <math.h>
+#include <string.h>
 
-/*输入10个学生的成绩（0-100），计算平均分（保留一位小数）
-并统计不及格（成绩低于60分）的学生人数*/
-//#define N 10
-//int main(void)
+
+//写一函数，将两个字符串连接
+
+//#define N 100
+//#define M 100
+//int main()
 //{
-//	int arr[N + 1] = { 0 };
-//	int count = 0;
-//	double ave = 0;
-//	double sum = 0;
-//	for (int i = 0; i < N; i++)
+//	char arr1[N];
+//	char arr2[M];
+//	gets(arr1);
+//	gets(arr2);
+//	int str1 = strlen(arr1);
+//	int str2 = strlen(arr2);
+//	int n = str1 + str2;
+//	for (int i = 0; i < str1; i++)
 //	{
-//		scanf("%d", &arr[i]);
+//		printf("%c", arr1[i]);
 //	}
-//	for (int i = 0; i < N; i++) 
+//	for (int i = 0; i < str2; i++)
 //	{
-//		if (arr[i] < 60)
-//		{
-//			count++;
-//		}
-//		sum += arr[i];
+//		printf("%c", arr2[i]);
 //	}
-//	ave = sum / 10.0;
-//	printf("%0.1lf ", ave);
-//	printf("%d", count);
 //	return 0;
 //}
 
 
-//输入10个数，找出其中绝对值最小的数，将它和最后一个数交换，然后输出这10个数
 
-//#define N 10
+
+
+
+
+
+
+//写一函数，使输入的一个字符串按反序存放         123456abcdef
+//在主函数中输入输出反序后的字符串（不包含空格） fedcba654321
+//#define N 100
 //
-//void Swap(int arr[N],int minpos,int n)
+//void swaps(char arr[N], int left, int right)
 //{
-//	int k = 0;
-//	k = arr[n];
-//	arr[n] = arr[minpos];
-//	arr[minpos] = k;
+//	int t = 0;
+//	t = arr[left];
+//	arr[left] = arr[right];
+//	arr[right] = t;
+//}
 //
+//void Swap(char arr[N], int K,int M)
+//{
+//	int left = 0;
+//	int right = K-1;
+//	while (left <=right)
+//	{
+//		swaps(arr, left, right);
+//		left++; right--;
+//	}
 //}
 //
 //int main(void)
 //{
-//	int arr[N + 1] = { 0 };
-//	int t = 0;
-//	int minpos = 0;
-//	for (int i = 0; i < N; i++)
+//	char arr[N];
+//	gets(arr);
+//	int 	str = strlen(arr);
+//	int m = str / 2;
+//	Swap(arr, str,m);
+//	for (int i = 0; i < str; i++)
+//	{
+//		printf("%c", arr[i]);
+//	}
+//	return 0;
+//}
+
+
+
+
+
+//输入数据的个数n 
+//n个整数 移动的位置m
+//#define N 100
+//void Swap(int arr[N],int n,int  m)
+//{
+//	while (m--)
+//	{
+//		int t = arr[n - 1];
+//		for (int i = n-1; i > 0; i--)
+//		{
+//			arr[i] = arr[i - 1];
+//		}
+//		arr[0] = t;
+//	}
+//}
+//
+//
+//int main(void)
+//{
+//	int n, m;
+//	int arr[N];
+//	scanf("%d", &n);
+//	for (int i = 0; i < n; i++)
 //	{
 //		scanf("%d", &arr[i]);
 //	}
-//	for (int i = 1; i < N; i++)
-//	{
-//		if (fabs(arr[minpos]) > fabs(arr[i]))
-//		{
-//			t = minpos;
-//			minpos = i;
-//			i = t;
-//		}
-//	}
-//	//printf("%d", minpos);
-//	Swap(arr,minpos,N-1);
-//	for (int i = 0; i < N; i++)
+//	scanf("%d", &m);
+//	Swap(arr, n, m);
+//	for (int i = 0; i < n; i++)
 //	{
 //		printf("%d ", arr[i]);
 //	}
 //	return 0;
 //}
- 
-
 
 //int main(void)
 //{
-//	double  x;
-//	double y = 0;
-//	scanf("%lf", &x);
-//	if (x < 1)
+//	int sum = 0;
+//	for (int i = 1; i <= 10; sum += i++);
+//	printf("%d", sum);
+//	return 0;
+//}
+
+
+
+
+
+//#define n 8
+//
+//void RightShift(char arr[n], int N,int K,int M)
+//{
+//	while (K--)
 //	{
-//		printf("%0.2lf", x);
+//		int t = arr[N - 1];
+//		for (int i = N - 1; i > 0; i--)
+//		{
+//			arr[i] = arr[i - 1];
+//		}
+//		arr[0] = t;
 //	}
-//	if (x >= 1 && x < 10)
+//}
+//
+//int main()
+//{
+//	char arr[n] = "abcd1234";
+//	int m = (int)strlen(arr);
+//	RightShift(arr,n,4,m);
+//	for (int i = 0; i < n; i++)
 //	{
-//		y = 2 * x - 1;
-//		printf("%0.2lf", y);
-//	}
-//	if (x >= 10)
-//	{
-//		y = 3 * x - 11;
-//		printf("%0.2lf", y);
+//		printf("%c", arr[i]);
 //	}
 //	return 0;
 //}
 
 
-//编程,输入一个１０进制正整数,然后输出它所对应的八进制数
 
 //int main(void)
 //{
-//	int n;
-//	scanf("%d", &n);
-//	printf("%o", n);
+//	char words[100] = "Hello World";
+//	const char *pt1 = "Hello World";
+//	/*puts("Hello World");
+//	puts(pt1);
+//	puts(words);*/
+//	printf("%s %p %c\n", "We", "are", *"space faers");
+//
+//
 //	return 0;
 //}
-
-//#define N 10
-
-//int main(void)
-//{
-//	char ch = '*';
-//	int i, j;
-//	for (i = 0; i < N; i++)
-//	{
-//		for (j = 0; j < N - i; j++)
-//		{
-//			printf(" ");
-//		}
-//		for (j = 0; j < 2 * i + 1; j++)
-//		{
-//			printf("%c", ch);
-//		//	printf("二爷牛逼");
-//		}
-//		printf("\n");
-//	}
-//	for (i = 0; i < N-1; i++)
-//	{
-//		for (j = 0; j <=i+1; j++)
-//		{
-//			printf(" ");
-//		}
-//		for (j = 0; j < 2*N-3-2*i; j++)
-//		{
-//			printf("%c", ch);
-//		//	printf("二爷牛逼");
-//		}
-//		printf("\n");
-//	}
-//}
-
-
