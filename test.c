@@ -1,93 +1,60 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
-
 #include <string.h>
-
-//计算两数的和
-int Add(int a, int b)   //定义一个函数
-{
-	int c = 0;
-	c = a + b;
-	return c;
-}
 
 int main(void)
 {
+	return 0;
+}
 
-	int i = 0;
-	int j = 0;
-	int sum = 0;
-	scanf("%d%d", &i, &j);
-	sum = Add(i, j);
-	printf("%d", sum);
+//输入一个字符串,数出其中的字母的个数
+int main(void)
+{
+	char arr[100];
+	int count = 0;
+	gets(arr);
+	for (int i = 0; i < strlen(arr); i++)
+	{
+		if (arr[i] >= 'A'&&arr[i] <= 'z')
+		{
+			count++;
+		}
+	}
+	printf("%d", count);
 	return 0;
 }
 
 
 
-
-
-
-
-
-
-
-//矩阵输入与打印
-//#define N  3
-//#define M  3
-
+//输入一串字符,将其中的大写变成小写
+//若不为大写则原样输出
 //int main(void)
 //{
-//	int arr[N][M] = { 0 };
-//	for (int i = 0; i < N; i++)
+//	char a[100];
+//	gets(a);
+//	for (int i = 0; i < strlen(a); i++)
 //	{
-//		for (int j = 0; j < M; j++)
-//		{
-//			scanf("%d", &arr[i][j]);
-//		}
+//		if (a[i] >= 'A'&&a[i] <= 'Z')
+//			a[i] += 32;
 //	}
-//	printf("\n");
-//	for (int i = 0; i < N; i++)
-//	{
-//		for (int j = 0; j < M; j++)
-//		{
-//			printf("%d ", arr[j][i]);
-//		}
-//		printf("\n");
-//	}
+//	puts(a);
 //	return 0;
 //}
 
 
-//#define m 100
-
 //int main(void)
 //{
-//	for (int i = 0; i < m; i++)
-//	{		
-//		for (int j = 0; j < m - i - 1; j++)
-//		{
-//			printf(" ");
-//		}
-//		for (int j = 0; j < 2*i+1; j++)
-//		{
-//			printf("*");
-//		}
-//		printf("\n");
-//	}
-//	for (int i = 0; i < m-1; i++)
+//	int arr[10] = { 1,2,9,4,3,7,9,4,5,3 };
+//	for (int i = 0; i < 10; i++)
 //	{
-//		for (int j = 0; j < i+1; j++)
+//		for (int j = 1+i; j < 10; j++)
 //		{
-//			printf(" ");
+//			if (arr[i] == arr[j])
+//			{
+//				printf("%d ", arr[i]);
+//			}
 //		}
-//		for (int j = 0; j < 2 * m - 3 - 2 * i; j++)
-//		{
-//			printf("*");
-//		}
-//		printf("\n");
 //	}
 //	return 0;
 //}
-
